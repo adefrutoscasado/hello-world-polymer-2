@@ -1,0 +1,31 @@
+<!-- Imports polymer -->
+<link rel="import" href="../../bower_components/polymer/polymer-element.html">
+
+
+<dom-module id="hello-world">
+  <!-- Defines element markup -->
+  <template>
+    <p>Hello <strong>[[who]]</strong> :)</p>
+  </template>
+
+  <!-- Registers custom element -->
+  <script>
+    /**
+      * @customElement
+      * @polymer
+      */
+    class HelloWorldElement extends Polymer.Element {
+      static get is() { return 'hello-world'; }
+      static get properties() {
+        return {
+          who: {
+            type: String,
+            value: 'World'
+          }
+        };
+      }
+    }
+
+    window.customElements.define(HelloWorldElement.is, HelloWorldElement);
+  </script>
+</dom-module>
